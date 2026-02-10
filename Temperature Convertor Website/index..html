@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main-layout">
+    <div class="container">
+      <button id="themeToggle" onclick="toggleTheme()">🌙 Toggle Dark Mode</button>
+      <h1>Temperature Converter</h1>
+      <input type="number" id="inputTemperature" placeholder="Enter temperature">
+      <select id="inputUnit">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+        <option value="K">Kelvin</option>
+      </select>
+      <button onclick="convertTemperature()">Convert</button>
+      <button onclick="clearCurrentInput()">Delete</button>
+      <div id="output"></div>
+    </div>
+
+    <div class="history-section">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <h3 style="margin: 0;">RECENT HISTORY</h3>
+        <button id="clearHistoryBtn" onclick="clearHistory()">Clear All</button>
+      </div>
+      <ul id="historyList"></ul>
+      <p id="emptyMsg" class="empty-msg" style="text-align: center; opacity: 0.6; font-style: italic;">No recent conversions</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
