@@ -1,7 +1,6 @@
 function updateHistoryDisplay() {
   const historyList = document.getElementById("historyList");
   const emptyMsg = document.getElementById("emptyMsg");
-  // Show message only if there are no list items
   emptyMsg.style.display = historyList.children.length === 0 ? "block" : "none";
 }
 
@@ -38,7 +37,6 @@ function convertTemperature() {
   document.getElementById("output").innerHTML = outputText;
   showOutput();
 
-  // Add to History UI
   const historyList = document.getElementById("historyList");
   const li = document.createElement("li");
   li.innerText = outputText;
@@ -47,7 +45,6 @@ function convertTemperature() {
   
   updateHistoryDisplay();
 
-  // Save to LocalStorage
   const saved = JSON.parse(localStorage.getItem("conversions")) || [];
   saved.push(outputText);
   localStorage.setItem("conversions", JSON.stringify(saved));
@@ -68,13 +65,11 @@ function toggleTheme() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Theme initialization
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
     document.getElementById("themeToggle").innerText = "☀️ Light Mode";
   }
 
-  // History initialization
   const saved = JSON.parse(localStorage.getItem("conversions")) || [];
   const historyList = document.getElementById("historyList");
   if (saved.length > 0) {
